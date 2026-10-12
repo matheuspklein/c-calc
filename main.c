@@ -18,7 +18,7 @@ int main(){
         printf("4. Divisão\n");
         printf("5. Sair\n");
         printf("Opção: ");
-        if(fgets(buffer, sizeof(buffer), stdin) == NULL){
+        if (fgets(buffer, sizeof(buffer), stdin) == NULL){
             continue;
         }
         buffer[strcspn(buffer, "\n")] = 0;
@@ -30,18 +30,18 @@ int main(){
         long val = strtol(buffer, &endptr, 10);
         char *p = endptr;
         while (*p == ' ' || *p == '\t') p++;
-        if(endptr == buffer || *p != '\0'){
+        if(endptr == buffer || *p != '\0') {
             printf("Erro: Entrada inválida. Por favor, insira um número inteiro entre 1 e 5.\n\n");
+            continue;
+        }
+        if(val < 1 || val > 5){
+            printf("Erro: Opção inválida. Por favor, insira um número entre 1 e 5.\n\n");
             continue;
         }
         opcao = (int)val;
         if(opcao == 5){
             printf("Obrigado por usar a calculadora! Até a próxima.\n");
             break;
-        }
-        if(opcao < 1 || opcao > 5){
-            printf("Erro: Opção inválida. Por favor, insira um número entre 1 e 5.\n\n");
-            continue;
         }
         int num_valido = 0;
         while(!num_valido){
@@ -68,14 +68,14 @@ int main(){
             double dval = strtod(buffer, &endptr);
             p = endptr;
             while (*p == ' ' || *p == '\t') p++;
-            if(endptr == buffer || *p != '\0'){
+            if (endptr == buffer || *p != '\0') {
                 printf("Erro: Entrada inválida. Insira um número válido.\n");
                 continue;
             }
             num2 = dval;
             num_valido = 1;
         }
-        switch(opcao){
+        switch (opcao){
             case 1:
                 resultado = num1 + num2;
                 printf("Resultado: %.2lf + %.2lf = %.2lf\n", num1, num2, resultado);
@@ -99,7 +99,7 @@ int main(){
         }
         do{
             printf("Deseja realizar outra operação? (s/n): ");
-            if(fgets(buffer, sizeof(buffer), stdin) == NULL) continue;
+            if (fgets(buffer, sizeof(buffer), stdin) == NULL) continue;
             buffer[strcspn(buffer, "\n")] = 0;
             if(strlen(buffer) != 1){
                 printf("Resposta inválida. Por favor, digite 's' para sim ou 'n' para não.\n");
