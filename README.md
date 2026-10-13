@@ -1,40 +1,62 @@
 # Calculadora Simples em C
 
-Uma aplicação de consola desenvolvida na linguagem C que permite efetuar operações aritméticas básicas de forma interativa. O programa conta com validação de entradas, tratamento de erros (como divisão por zero) e compatibilidade multiplataforma para limpeza de ecrã.
+## 1. Título e descrição
+A **Calculadora Simples** é um programa interativo desenvolvido em linguagem C que permite realizar operações aritméticas básicas (adição, subtração, multiplicação e divisão). O programa foi construído com validação avançada de dados de entrada, prevenindo erros de conversão, opções inválidas fora do intervalo permitido e tentativas de divisão por zero. É uma ferramenta útil para estudantes que estão a iniciar-se na programação em C e que procuram compreender o tratamento de entradas seguras no terminal.
 
----
+## 2. Demonstração
+Abaixo encontra-se uma representação visual do programa em execução:
 
-## 🚀 Funcionalidades
+![Demonstração da Calculadora](./assets/demo.png)
 
-* **Operações Básicas:**
-  * Adição (`+`)
-  * Subtração (`-`)
-  * Multiplicação (`*`)
-  * Divisão (`/`)
-* **Tratamento de Erros:** Deteção e prevenção de divisão por zero, notificando o utilizador sem fechar o programa abruptamente.
-* **Menu Interativo:** Permite realizar várias operações sucessivas ou sair de forma limpa.
-* **Compatibilidade Multiplataforma:** Limpeza automática do ecrã compatível com sistemas **Windows** (`cls`) e **Linux/macOS** (`clear`).
+## 3. Instalação e pré-requisitos
+Para conseguir compilar e executar o programa no seu computador, certifique-se de que possui as seguintes ferramentas:
+* Um compilador de C instalado e configurado no sistema (por exemplo, **GCC** ou Clang).
+* Um terminal de comandos (PowerShell, CMD, Bash, etc.).
 
----
+### Passos para preparação:
+1. Descarregue ou clone os ficheiros do projeto para uma pasta local.
+2. Certifique-se de que os ficheiros fonte (`main.c`), a licença (`LICENSE`) e a pasta de recursos (`assets/`) se encontram na raiz do diretório.
 
-## 🛠️ Tecnologias Utilizadas
+## 4. Uso e exemplos
+Para compilar o código-fonte, abra o terminal na pasta do projeto e execute o comando do compilador GCC:
 
-* Linguagem **C** (padrão C99 ou superior).
-* Bibliotecas standard: `<stdio.h>` e `<stdlib.h>`.
+    gcc main.c -o calculadora
 
----
+Para iniciar o programa, execute o binário gerado:
+* **No Linux / macOS:** `./calculadora`
+* **No Windows:** `.\calculadora.exe`
 
-## ⚙️ Pré-requisitos
+### Exemplo de execução passo a passo:
+1. O menu principal será apresentado no terminal:
 
-Para compilar e executar este programa, necessita de ter instalado no seu computador:
-* Um compilador de C (por exemplo, **GCC**, **Clang** ou **MinGW**).
+    ==============================
+          Calculadora Simples      
+    ==============================
+    Selecione uma operação:
+    1. Adição
+    2. Subtração
+    3. Multiplicação
+    4. Divisão
+    5. Sair
+    Opção: 
 
----
+2. Digite `1` para selecionar a Adição.
+3. Insira o primeiro número quando solicitado (ex: `15.5`).
+4. Insira o segundo número quando solicitado (ex: `4.5`).
+5. O programa exibirá o resultado formatado:
 
-## 📥 Como Compilar e Executar
+    Resultado: 15.50 + 4.50 = 20.00
 
-1. Guarde o código-fonte num ficheiro com o nome `calculadora.c`.
-2. Abra a consola (terminal) na pasta onde guardou o ficheiro.
-3. Compile o programa com o comando:
-   ```bash
-   gcc calculadora.c -o calculadora
+6. Poderá escolher continuar (`s`) para realizar novos cálculos ou terminar a sessão (`n`).
+
+## 5. Estrutura do projeto
+A organização dos ficheiros na raiz do repositório está disposta da seguinte forma:
+
+    ├── README.md         # Documentação completa e instruções do projeto
+    ├── LICENSE           # Texto completo da licença adotada
+    ├── main.c            # Código-fonte principal da calculadora em C
+    └── assets/           # Pasta para armazenamento de mídias do projeto
+        └── demo.png      # Imagem de demonstração da execução
+
+## 6. Licença
+Este projeto encontra-se licenciado sob os termos da **Licença MIT**. Para mais informações detalhadas sobre os direitos e termos de utilização, consulte o ficheiro [LICENSE](./LICENSE) incluído na raiz.
